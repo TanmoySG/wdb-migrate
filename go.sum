@@ -1,0 +1,8 @@
+github.com/TanmoySG/wdb-go v0.0.0-20230409065428-480b948974dd h1:t9MckE2HSbx0hr5egAvyrQz4pJCkP4KOgyzmXShRMI4=
+github.com/TanmoySG/wdb-go v0.0.0-20230409065428-480b948974dd/go.mod h1:qDEADkEAZl9ejKkQ20qHG7x20VDd848mNNOxTWceg4k=
+github.com/TanmoySG/wunderDB v1.1.0 h1:xq7ROfD7h3dboPQ/hI7UJ6s7MNOLu3eJtLlGG2XapuM=
+github.com/TanmoySG/wunderDB v1.1.0/go.mod h1:5kOZtujAFg+DMLkpKxaq0glDHj4GZNcJYAfifWMwcKk=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/stretchr/testify v1.8.1 h1:w7B6lhMri9wdJUVmEZPGGhZzrYTPvgJArz7wNPgYKsk=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
