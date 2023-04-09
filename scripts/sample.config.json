@@ -1,0 +1,14 @@
+{
+    "configurations": {
+        "retro": {
+            "baseUrl": "",
+            "cluster": "",
+            "token": ""
+        },
+        "wunderdb": {
+            "baseUrl": "",
+            "username": "",
+            "password": ""
+        }
+    }
+}
