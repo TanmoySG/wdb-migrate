@@ -7,5 +7,5 @@ func (ws wdbStateAdapter) AddData(data any) error {
 		return fmt.Errorf("collection not set")
 	}
 
-	return ws.Client.AddData(data, ws.State.Database, *ws.State.Collection)
+	return ws.client.AddData(data, ws.State.Database, *ws.State.Collection)
 }

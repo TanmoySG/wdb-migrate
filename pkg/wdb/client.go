@@ -4,15 +4,15 @@ import wdbgo "github.com/TanmoySG/wdb-go"
 
 var projectID string = "wdb-migrate"
 
-type wdbAdapter struct {
+type WdbAdapter struct {
 	wdbgo.Client
 }
 
-func NewClient(username string, password string, connectionURI string) (*wdbAdapter, error) {
+func NewClient(username string, password string, connectionURI string) *WdbAdapter {
 	wdbG, err := wdbgo.NewClient(username, password, connectionURI, &projectID)
 	if err != nil {
-		return nil, err
+		return nil
 	}
 
-	return &wdbAdapter{wdbG}, nil
+	return &WdbAdapter{wdbG}
 }
