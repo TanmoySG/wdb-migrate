@@ -11,6 +11,7 @@ import (
 )
 
 const defaultConfigFilepath = "config.json"
+const defaultSourceSinkConfigFilepath = "source-sink.json"
 
 func main() {
 
@@ -36,7 +37,12 @@ func main() {
 		c.ConnectionConfigurations.Wunderdb.BaseURL,
 	)
 
-	sourceSink, err := migration.LoadMigrationConfig("source-sink.json")
+	sourceSinkConfigPath := defaultSourceSinkConfigFilepath
+	if len(os.Args) > 1 {
+		sourceSinkConfigPath = os.Args[1]
+	}
+
+	sourceSink, err := migration.LoadMigrationConfig(sourceSinkConfigPath)
 	if err != nil {
 		log.Fatalf(err.Error())
 	}
