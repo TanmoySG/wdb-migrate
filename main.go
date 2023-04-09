@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
 	"github.com/TanmoySG/wdb-migrate/internal/config"
+	"github.com/TanmoySG/wdb-migrate/internal/migration"
+	"github.com/TanmoySG/wdb-migrate/pkg/wdb"
 	"github.com/TanmoySG/wdb-migrate/pkg/wdb/retro"
 )
 
@@ -23,18 +24,27 @@ func main() {
 		log.Fatalf(err.Error())
 	}
 
-	rc := retro.NewClient(
+	wdbrc := retro.NewClient(
 		c.ConnectionConfigurations.Retro.BaseURL,
 		c.ConnectionConfigurations.Retro.Cluster.Decode(),
 		c.ConnectionConfigurations.Retro.Token.Decode(),
 	)
 
-	res, err := rc.GetData("tsgOnWebData", "education")
+	wdbac := wdb.NewClient(
+		c.ConnectionConfigurations.Wunderdb.Username.Decode(),
+		c.ConnectionConfigurations.Wunderdb.Password.Decode(),
+		c.ConnectionConfigurations.Wunderdb.BaseURL,
+	)
+
+	sourceSink, err := migration.LoadMigrationConfig("source-sink.json")
 	if err != nil {
 		log.Fatalf(err.Error())
 	}
 
-	for r, rb := range res.Data {
-		fmt.Printf("key: %s, value: %v\n\n", r, rb)
+	mc, err := migration.NewMigrationClient(wdbac, &wdbrc)
+	if err != nil {
+		log.Fatalf(err.Error())
 	}
+
+	mc.MigrateData(sourceSink.Source, sourceSink.Sink)
 }
