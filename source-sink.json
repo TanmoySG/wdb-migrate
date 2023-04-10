@@ -1,0 +1,10 @@
+{
+    "source": {
+        "database": "tsgOnWebData",
+        "collection": "education"
+    },
+    "sink": {
+        "database": "migrated-tsgOnWebData",
+        "collection": "migrated-education"
+    }
+}

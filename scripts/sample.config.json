@@ -1,0 +1,14 @@
+{
+    "configurations": {
+        "retro": {
+            "baseUrl": "localhost:8090",
+            "cluster": "Y2x1c3Rlcg==",
+            "token": "dG9rZW4="
+        },
+        "wunderdb": {
+            "baseUrl": "localhost:8080",
+            "username": "dXNlcm5hbWU=",
+            "password": "cGFzc3dvcmQ="
+        }
+    }
+}
