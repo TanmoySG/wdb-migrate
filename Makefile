@@ -1,2 +1,2 @@
-migrate:
-	go run main.go
+run-migration:
+	go run migrate.go
