@@ -15,6 +15,10 @@ make run-migration
 
 If source-sink.json is not provided, it picks up the default file at the project's root directory.
 
+### Data Migration
+
+Currently only data migration between pre-existing database and collection is supported. So it is a prerequisite that the Database and Collection must exist in v1. Refer to [the issue `#1`](https://github.com/TanmoySG/wdb-migrate/issues/1) for more details on setting up the prerequisites.
+
 ### Connection Configuration
 
 wdb-migrate uses a configuration JSON to get the required credentials to connect to v0 and v1 instances for the movement. The config json looks like
