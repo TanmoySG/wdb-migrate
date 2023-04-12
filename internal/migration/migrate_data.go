@@ -28,6 +28,7 @@ func (mc MigrationClient) MigrateData(source SourceSink, sink SourceSink) {
 		err := md.AddData(rb)
 		if err != nil {
 			log.Println(err.Error())
+			continue
 		}
 
 		log.Printf("moved data with key: %s\n", r)
