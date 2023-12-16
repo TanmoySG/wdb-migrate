@@ -17,7 +17,9 @@ If source-sink.json is not provided, it picks up the default file at the project
 
 ### Data Migration
 
-Currently only data migration between pre-existing database and collection is supported. So it is a prerequisite that the Database and Collection must exist in v1. Refer to [the issue `#1`](https://github.com/TanmoySG/wdb-migrate/issues/1) for more details on setting up the prerequisites.
+Currently only data migration between pre-existing database is supported. So it is a prerequisite that the Database must exist in v1. Refer to [the issue `#1`](https://github.com/TanmoySG/wdb-migrate/issues/1) for more details on setting up the prerequisites.
+
+Collections would be created using generated schema from sampled data if it doesn't exist.
 
 ### Connection Configuration
 
