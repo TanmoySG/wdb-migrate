@@ -16,10 +16,10 @@ make run-migration
 If source-sink.json is not provided, it picks up the default file at the project's root directory.
 
 ### Data Migration
+<!-- 
+Currently only data migration between pre-existing database is supported. So it is a prerequisite that the Database must exist in v1. Refer to [the issue `#1`](https://github.com/TanmoySG/wdb-migrate/issues/1) for more details on setting up the prerequisites. -->
 
-Currently only data migration between pre-existing database is supported. So it is a prerequisite that the Database must exist in v1. Refer to [the issue `#1`](https://github.com/TanmoySG/wdb-migrate/issues/1) for more details on setting up the prerequisites.
-
-Collections would be created using generated schema from sampled data if it doesn't exist.
+Database and Collections would be created using generated schema from sampled data if it doesn't exist. If database/collection already exists in wdb v1 (sink) the process might fail.
 
 ### Connection Configuration
 
@@ -66,3 +66,5 @@ wdb-migrate uses a source-sink configuration json file to specify the source dat
     }
 }
 ```
+
+If sink configs are not provided, they're generated from using the source configs by prepending `migrated-` with the source entities.
