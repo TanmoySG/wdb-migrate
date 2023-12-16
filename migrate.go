@@ -52,5 +52,5 @@ func main() {
 		log.Fatalf(err.Error())
 	}
 
-	mc.MigrateData(sourceSink.Source, sourceSink.Sink)
+	mc.Migrate(sourceSink.Source, sourceSink.Sink)
 }
