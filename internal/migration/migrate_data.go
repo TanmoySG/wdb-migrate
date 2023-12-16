@@ -14,7 +14,7 @@ func (mc MigrationClient) Migrate(source SourceSink, sink SourceSink) {
 	log.Infof(logFormat, *source.Database, *source.Collection, *sink.Database, *sink.Collection)
 
 	err := mc.Clients.WdbClient.CreateDatabase(*sink.Database)
-	if err != nil {
+	if err != nil && err.Error() != "databaseExists" {
 		log.Fatalf("Sink Error: %s, DB not created", err)
 	}
 
@@ -34,7 +34,7 @@ func (mc MigrationClient) Migrate(source SourceSink, sink SourceSink) {
 	}
 
 	err = mc.Clients.WdbClient.CreateCollection(*sink.Database, *sink.Collection, generatedJsonSchema)
-	if err != nil {
+	if err != nil && err.Error() != "collectionExists" {
 		log.Fatalf("Sink Error: %s, Collection not created", err)
 	}
 
