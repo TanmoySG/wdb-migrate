@@ -66,3 +66,5 @@ wdb-migrate uses a source-sink configuration json file to specify the source dat
     }
 }
 ```
+
+If sink configs are not provided, they're generated from using the source configs by prepending `migrated-` with the source entities.
